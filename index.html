@@ -2,177 +2,205 @@
 <html lang="vi" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phương Minh PMS — Phần Mềm Quản Lý Khách Sạn &amp; Homestay 1 Chạm</title>
-  <meta name="description" content="Phần mềm quản lý khách sạn Offline-First: Check-in quét CCCD 5 giây, Mã QR gọi món POS từng phòng, Camera AI 4MP, In hóa đơn K80 & xuất Excel Công an." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Phương Minh PMS — Phần Mềm Quản Lý Khách Sạn &amp; Homestay</title>
+  <meta name="description" content="Phần mềm quản lý khách sạn chạy mạng nội bộ: Quét CCCD 3 giây, Mã QR gọi món từng phòng, Camera 4MP đối soát thu ngân, In hóa đơn K80. Miễn phí bản Portable Windows." />
   <link rel="icon" href="/assets/pmvn-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Be Vietnam Pro"', 'system-ui', '-apple-system', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#eefaf8',
+              100: '#d4f2ed',
+              600: '#0b6b61',
+              700: '#09574f',
+              800: '#08453f',
+              900: '#073531',
+            }
+          }
+        }
+      }
+    };
+  </script>
   <style>
-    body { background: #061314; color: #f1f5f9; font-family: "Segoe UI", system-ui, -apple-system, sans-serif; }
-    .gold-grad { background: linear-gradient(90deg, #ffca40 0%, #fde68a 50%, #34d399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+      background: #ffffff;
+      color: #0f172a;
+      font-family: "Be Vietnam Pro", system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
   </style>
 </head>
-<body class="selection:bg-[#ffca40] selection:text-[#061314]">
+<body class="bg-white text-slate-900 selection:bg-brand-100 selection:text-brand-900">
 
-  <!-- 1. NAVBAR -->
-  <header class="sticky top-0 z-50 bg-[#061314]/85 backdrop-blur-xl border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
-      <a href="#top" class="flex items-center gap-3 group">
-        <img src="/assets/pmvn-logo.png" alt="Phương Minh PMS" class="w-11 h-11 rounded-xl shadow-lg ring-1 ring-[#ffca40]/40 group-hover:scale-105 transition-transform" />
-        <div>
-          <p class="text-sm sm:text-base font-black tracking-tight text-white leading-none">
-            PHƯƠNG MINH <span class="text-[#ffca40]">PMS</span>
+  <!-- 1. HEADER -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <a href="#top" class="flex items-center gap-2.5 min-w-0">
+        <img src="/assets/pmvn-logo.png" alt="Phương Minh PMS" class="w-9 h-9 rounded-lg object-cover border border-slate-200 shrink-0" />
+        <div class="min-w-0">
+          <p class="text-sm sm:text-base font-extrabold tracking-tight text-slate-900 truncate leading-tight">
+            Phương Minh <span class="text-brand-600">PMS</span>
           </p>
-          <p class="text-[10px] font-bold tracking-widest uppercase text-emerald-400 mt-0.5">
-            Smart Hospitality Suite 2027
+          <p class="text-[10px] font-semibold text-slate-500 truncate leading-tight">
+            Phần mềm quản lý khách sạn
           </p>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 text-xs font-bold text-slate-300">
-        <a href="#features" class="hover:text-[#ffca40] transition-colors">Tính Năng</a>
-        <a href="#qr-showcase" class="hover:text-[#ffca40] transition-colors">QR Gọi Món 3D</a>
-        <a href="#video-demo" class="hover:text-[#ffca40] transition-colors">Video Demo</a>
-        <a href="#pricing" class="hover:text-[#ffca40] transition-colors">Bảng Giá</a>
-        <a href="#faq" class="hover:text-[#ffca40] transition-colors">Hỏi Đáp</a>
+      <nav class="hidden md:flex items-center gap-6 text-[13px] font-semibold text-slate-600">
+        <a href="#features" class="hover:text-brand-600 transition-colors">Tính năng</a>
+        <a href="#qr-showcase" class="hover:text-brand-600 transition-colors">QR tại phòng</a>
+        <a href="#video-demo" class="hover:text-brand-600 transition-colors">Video demo</a>
+        <a href="#pricing" class="hover:text-brand-600 transition-colors">Bảng giá</a>
+        <a href="#faq" class="hover:text-brand-600 transition-colors">Hỏi đáp</a>
       </nav>
 
-      <div class="flex items-center gap-2.5">
-        <a href="tel:0941204125" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 text-xs font-extrabold hover:bg-emerald-500/20 transition-all">
-          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+      <div class="flex items-center gap-2 shrink-0">
+        <a href="tel:0941204125" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-600"></i>
           <span>0941 204 125</span>
         </a>
-        <a href="#contact" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#ffca40] hover:bg-amber-400 text-[#061314] text-xs font-black shadow-lg shadow-amber-500/20 transition-all">
-          <span>Nhận Bản Dùng Thử</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        <a href="https://github.com/PhuongMinhVN/omoshop-landing/raw/downloads/PMVN-PMS-Portable.zip" download="PMVN-PMS-Portable.zip" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold shadow-sm transition-colors whitespace-nowrap">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span>Tải Miễn Phí</span>
         </a>
       </div>
     </div>
   </header>
 
   <!-- 2. HERO -->
-  <section id="top" class="relative overflow-hidden pt-14 pb-20 lg:pt-20 lg:pb-28">
-    <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[520px] rounded-full bg-emerald-500/15 blur-[130px]"></div>
-    <div class="pointer-events-none absolute top-40 right-0 w-[420px] h-[420px] rounded-full bg-[#ffca40]/10 blur-[120px]"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 text-xs font-extrabold">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#ffca40]"></i>
-            <span>Phần Mềm Khách Sạn Offline-First • Mua 1 Lần Dùng Vĩnh Viễn</span>
+  <section id="top" class="pt-8 pb-12 sm:pt-14 sm:pb-20 bg-gradient-to-b from-slate-50 to-white border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Left Copy -->
+        <div class="lg:col-span-6 space-y-5">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-50 border border-brand-100 text-brand-700 text-xs font-semibold">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-600 shrink-0"></span>
+            <span>Chạy mạng nội bộ • Không phí duy trì hàng tháng</span>
           </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-[52px] font-black tracking-tight text-white leading-[1.12]">
-            Quản Lý Khách Sạn <span class="gold-grad">1 Chạm Thông Minh</span>, Chống Thất Thoát 100%
+          <h1 class="text-[28px] sm:text-4xl lg:text-[42px] font-extrabold tracking-tight text-slate-900 leading-[1.22]">
+            Quản lý khách sạn &amp; homestay gọn nhẹ, chống thất thoát
           </h1>
 
-          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
-            Từ <strong class="text-white">Check-in quét CCCD 5 giây</strong>, <strong class="text-white">Mã QR gọi món POS tại từng phòng</strong>, đến <strong class="text-white">Camera AI 4MP đối soát quầy lễ tân</strong> &amp; xuất Hóa Đơn K80 — chạy siêu nhanh 100% mạng nội bộ, không phí thuê bao Cloud.
+          <p class="text-[15px] sm:text-base text-slate-600 leading-relaxed">
+            Quét CCCD/Hộ chiếu trong 3 giây, mã QR gọi món tại từng phòng, đối soát Camera 4MP quầy thu ngân và in hóa đơn K80. Cài đặt 1 click trên Windows, mất mạng Internet vẫn vận hành bình thường.
           </p>
 
-          <div class="flex flex-wrap items-center gap-3.5 pt-1">
-            <a href="#contact" class="px-7 py-4 rounded-2xl bg-[#ffca40] hover:bg-amber-400 text-[#061314] font-black text-sm flex items-center gap-2 shadow-xl shadow-amber-500/25 transition-all">
-              <span>Đăng Ký Trải Nghiệm Miễn Phí</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+            <a href="https://github.com/PhuongMinhVN/omoshop-landing/raw/downloads/PMVN-PMS-Portable.zip" download="PMVN-PMS-Portable.zip" class="px-5 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
+              <i data-lucide="download" class="w-4 h-4 shrink-0"></i>
+              <span>Tải Bản Portable Miễn Phí</span>
             </a>
-            <a href="#video-demo" class="px-6 py-4 rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10 text-white font-extrabold text-sm flex items-center gap-2 transition-all">
-              <i data-lucide="play" class="w-4 h-4 text-[#ffca40]"></i>
-              <span>Xem Video Hướng Dẫn (1p30s)</span>
+            <a href="#video-demo" class="px-5 py-3.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm flex items-center justify-center gap-2 transition-colors">
+              <i data-lucide="play-circle" class="w-4 h-4 text-brand-600 shrink-0"></i>
+              <span>Xem Video Demo (1p30s)</span>
             </a>
           </div>
 
-          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
+          <div class="grid grid-cols-3 gap-3 pt-5 border-t border-slate-200/80">
             <div>
-              <p class="text-2xl sm:text-3xl font-black text-[#ffca40] font-mono">0 đ</p>
-              <p class="text-xs text-slate-400 font-semibold mt-0.5">Phí thuê bao Cloud hàng tháng</p>
+              <p class="text-xl sm:text-2xl font-extrabold text-brand-700">0 đ</p>
+              <p class="text-[11px] sm:text-xs text-slate-500 font-medium mt-0.5 leading-snug">Phí Cloud hàng tháng</p>
             </div>
             <div>
-              <p class="text-2xl sm:text-3xl font-black text-emerald-400 font-mono">5 giây</p>
-              <p class="text-xs text-slate-400 font-semibold mt-0.5">Check-in &amp; quét CCCD tự động</p>
+              <p class="text-xl sm:text-2xl font-extrabold text-slate-900">3 giây</p>
+              <p class="text-[11px] sm:text-xs text-slate-500 font-medium mt-0.5 leading-snug">Quét CCCD &amp; nhận phòng</p>
             </div>
             <div>
-              <p class="text-2xl sm:text-3xl font-black text-white font-mono">-30%</p>
-              <p class="text-xs text-slate-400 font-semibold mt-0.5">Tiết kiệm điện điều hòa IoT</p>
+              <p class="text-xl sm:text-2xl font-extrabold text-slate-900">-30%</p>
+              <p class="text-[11px] sm:text-xs text-slate-500 font-medium mt-0.5 leading-snug">Tiết kiệm điện điều hòa</p>
             </div>
           </div>
         </div>
 
-        <!-- Interactive PMS Mockup -->
+        <!-- Right Software Preview Card -->
         <div class="lg:col-span-6">
-          <div class="rounded-3xl bg-gradient-to-br from-slate-900 via-[#0b2324] to-slate-950 border border-white/15 p-5 sm:p-6 shadow-2xl">
-            <div class="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
-              <div class="flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-rose-500"></span>
-                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
-                <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
-                <span class="ml-2 text-xs font-mono font-bold text-emerald-300">PMVN PMS • Sơ Đồ Phòng Thời Gian Thực</span>
+          <div class="rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-200/60 overflow-hidden">
+            <div class="px-4 py-3 bg-slate-900 text-white flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1.5 min-w-0">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-400 shrink-0"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400 shrink-0"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 shrink-0"></span>
+                <span class="ml-1.5 text-[11px] font-semibold text-slate-300 truncate">PMVN PMS • Sơ đồ phòng lễ tân</span>
               </div>
-              <span class="text-[10px] font-black px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">● LOCAL LIVE</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 shrink-0">LAN LIVE</span>
             </div>
 
-            <div class="grid grid-cols-2 gap-3">
-              <div class="rounded-2xl bg-white/5 border border-rose-500/40 p-3.5 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-lg font-black text-white font-mono">P.101</span>
-                  <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300">Đang Ở</span>
+            <div class="p-3.5 sm:p-4 bg-slate-50 space-y-3">
+              <div class="grid grid-cols-2 gap-2.5 sm:gap-3">
+                <div class="rounded-xl bg-white border border-rose-200 p-3 space-y-1.5 shadow-2xs">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="text-sm sm:text-base font-extrabold text-slate-900">P.101</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-rose-50 text-rose-700">Đang ở</span>
+                  </div>
+                  <p class="text-xs text-slate-600 truncate">Nguyễn Văn An</p>
+                  <div class="flex items-center justify-between text-[11px] pt-1.5 border-t border-slate-100">
+                    <span class="text-emerald-700 font-semibold">Cam 4MP</span>
+                    <span class="font-bold text-slate-900">615.000đ</span>
+                  </div>
                 </div>
-                <p class="text-xs text-slate-300 font-semibold">Nguyễn Văn An • Standard</p>
-                <div class="flex items-center justify-between text-[11px] pt-1 border-t border-white/10">
-                  <span class="text-emerald-400 font-bold">📹 Cam 4MP Online</span>
-                  <span class="font-mono font-black text-[#ffca40]">615.000đ</span>
+
+                <div class="rounded-xl bg-white border border-emerald-200 p-3 space-y-1.5 shadow-2xs">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="text-sm sm:text-base font-extrabold text-slate-900">P.102</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700">Sẵn sàng</span>
+                  </div>
+                  <p class="text-xs text-slate-600 truncate">Deluxe Ban Công</p>
+                  <div class="flex items-center justify-between text-[11px] pt-1.5 border-t border-slate-100">
+                    <span class="text-slate-500">Ngắt điện</span>
+                    <span class="font-bold text-slate-900">750.000đ</span>
+                  </div>
+                </div>
+
+                <div class="rounded-xl bg-white border border-amber-200 p-3 space-y-1.5 shadow-2xs">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="text-sm sm:text-base font-extrabold text-slate-900">P.201</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-50 text-amber-800">Ra ngoài</span>
+                  </div>
+                  <p class="text-xs text-slate-600 truncate">Trần Minh Tuấn</p>
+                  <div class="flex items-center justify-between text-[11px] pt-1.5 border-t border-slate-100">
+                    <span class="text-amber-700 font-semibold">Tắt ĐH</span>
+                    <span class="font-bold text-slate-900">950.000đ</span>
+                  </div>
+                </div>
+
+                <div class="rounded-xl bg-white border border-sky-200 p-3 space-y-1.5 shadow-2xs">
+                  <div class="flex items-center justify-between gap-1">
+                    <span class="text-sm sm:text-base font-extrabold text-slate-900">P.202</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-sky-50 text-sky-700">Chờ dọn</span>
+                  </div>
+                  <p class="text-xs text-slate-600 truncate">Vừa in HĐ K80</p>
+                  <div class="flex items-center justify-between text-[11px] pt-1.5 border-t border-slate-100">
+                    <span class="text-sky-700 font-semibold">Báo buồng</span>
+                    <span class="font-bold text-emerald-700">Đã thu</span>
+                  </div>
                 </div>
               </div>
 
-              <div class="rounded-2xl bg-white/5 border border-emerald-500/40 p-3.5 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-lg font-black text-white font-mono">P.102</span>
-                  <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300">Sẵn Sàng</span>
+              <div class="rounded-xl bg-brand-700 text-white p-3 flex items-center justify-between gap-2.5">
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <div class="w-8 h-8 rounded-lg bg-amber-400 text-slate-950 flex items-center justify-center shrink-0">
+                    <i data-lucide="bell" class="w-4 h-4"></i>
+                  </div>
+                  <div class="min-w-0">
+                    <p class="text-[10px] font-bold uppercase tracking-wide text-amber-300 truncate">Khách quét QR Phòng 101</p>
+                    <p class="text-xs font-semibold text-white truncate">Phở Bò ×1, Cà phê ×1 · 115.000đ</p>
+                  </div>
                 </div>
-                <p class="text-xs text-slate-300 font-semibold">Deluxe Ban Công</p>
-                <div class="flex items-center justify-between text-[11px] pt-1 border-t border-white/10">
-                  <span class="text-slate-400">⚡ Đang ngắt điện</span>
-                  <span class="font-mono font-black text-white">750.000đ</span>
-                </div>
+                <span class="px-2.5 py-1.5 rounded-lg bg-white text-brand-800 text-[11px] font-extrabold shrink-0">Ghi phòng</span>
               </div>
-
-              <div class="rounded-2xl bg-white/5 border border-amber-400/40 p-3.5 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-lg font-black text-white font-mono">P.201</span>
-                  <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-300">Ra Ngoài (-30%)</span>
-                </div>
-                <p class="text-xs text-slate-300 font-semibold">Trần Minh Tuấn • VIP</p>
-                <div class="flex items-center justify-between text-[11px] pt-1 border-t border-white/10">
-                  <span class="text-amber-300 font-bold">❄️ Tự tắt điều hòa</span>
-                  <span class="font-mono font-black text-[#ffca40]">950.000đ</span>
-                </div>
-              </div>
-
-              <div class="rounded-2xl bg-white/5 border border-sky-400/30 p-3.5 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-lg font-black text-white font-mono">P.202</span>
-                  <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-sky-500/20 text-sky-300">Chờ Dọn</span>
-                </div>
-                <p class="text-xs text-slate-300 font-semibold">Vừa xuất HĐ K80</p>
-                <div class="flex items-center justify-between text-[11px] pt-1 border-t border-white/10">
-                  <span class="text-sky-300 font-bold">🧹 Đã báo buồng</span>
-                  <span class="font-mono font-black text-emerald-400">✓ Đã thu</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-4 rounded-2xl bg-gradient-to-r from-[#0d6e66] to-emerald-900 border border-[#ffca40]/60 p-3.5 flex items-center justify-between gap-3 shadow-lg">
-              <div class="flex items-center gap-3 min-w-0">
-                <div class="w-10 h-10 rounded-xl bg-[#ffca40] text-[#061314] flex items-center justify-center shrink-0">
-                  <i data-lucide="bell" class="w-5 h-5"></i>
-                </div>
-                <div class="min-w-0">
-                  <p class="text-[10px] font-black uppercase tracking-wider text-[#ffca40]">DING-DING! KHÁCH QUÉT QR PHÒNG 101</p>
-                  <p class="text-xs font-bold text-white truncate">Phở Bò ×1, Cà Phê Sữa ×1, Nước Suối ×2 · 115.000 đ</p>
-                </div>
-              </div>
-              <span class="px-3 py-1.5 rounded-xl bg-[#ffca40] text-[#061314] text-[11px] font-black shrink-0">Ghi Phòng ✓</span>
             </div>
           </div>
         </div>
@@ -180,129 +208,28 @@
     </div>
   </section>
 
-  <!-- 3. 6 CORE PILLARS -->
-  <section id="features" class="py-20 bg-[#f6f8f7] text-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
-        <span class="inline-block px-3.5 py-1 rounded-full bg-[#0d6e66]/10 text-[#0d6e66] text-xs font-extrabold uppercase tracking-wider">Hệ Sinh Thái Toàn Diện Cho Khách Sạn</span>
-        <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900">Mọi Nghiệp Vụ Khách Sạn Trong Một Giao Diện Siêu Nhanh</h2>
-        <p class="text-sm sm:text-base text-slate-600">Thiết kế thực chiến cho chủ khách sạn, homestay &amp; nhà nghỉ tại Việt Nam — lễ tân mới chỉ cần 5 phút là thành thạo.</p>
+  <!-- 3. VIDEO DEMO -->
+  <section id="video-demo" class="py-12 sm:py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-8 space-y-2">
+        <p class="text-xs font-bold uppercase tracking-wider text-brand-600">Video thực tế</p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Xem quy trình vận hành trong 90 giây</h2>
+        <p class="text-sm text-slate-600">Từ lúc khách bước vào sảnh, quét CCCD, chụp ảnh đối soát đến gọi món QR và in hóa đơn.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3.5">
-          <div class="flex items-center justify-between">
-            <div class="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center"><i data-lucide="id-card" class="w-6 h-6"></i></div>
-            <span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">CHECK-IN 5 GIÂY</span>
-          </div>
-          <h3 class="text-lg font-black text-slate-900">Quét CCCD &amp; Khai Báo Công An 1 Chạm</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Chụp hoặc quét mã QR trên CCCD để tự điền Họ tên, Số CCCD, Ngày sinh, Địa chỉ. Cuối ngày bấm 1 nút xuất file Excel chuẩn nộp Cổng Dịch Vụ Công.</p>
-        </div>
-
-        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3.5">
-          <div class="flex items-center justify-between">
-            <div class="w-12 h-12 rounded-2xl bg-[#0d6e66] text-white flex items-center justify-center"><i data-lucide="qr-code" class="w-6 h-6"></i></div>
-            <span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">QR GỌI MÓN NỘI BỘ</span>
-          </div>
-          <h3 class="text-lg font-black text-slate-900">Mã QR Riêng Từng Phòng — Chuông Báo Thu Ngân</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Khách vào phòng quét QR bằng Camera/Zalo để đặt đồ ăn POS hoặc gọi phục vụ, dọn phòng. Tự khóa khi phòng trống, thu ngân bấm 1 chạm ghi thẳng vào Folio.</p>
-        </div>
-
-        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3.5">
-          <div class="flex items-center justify-between">
-            <div class="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center"><i data-lucide="utensils-crossed" class="w-6 h-6"></i></div>
-            <span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">POS &amp; HÓA ĐƠN K80</span>
-          </div>
-          <h3 class="text-lg font-black text-slate-900">POS Bán Hàng 3 Cột &amp; VietQR Động</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Giao diện POS chạm cực mượt: chọn món, ghi chú bếp, trừ tồn kho tự động, quy đổi tiền mặt USD/EUR và xuất hóa đơn nhiệt khổ 80mm chuyên nghiệp.</p>
-        </div>
-
-        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3.5">
-          <div class="flex items-center justify-between">
-            <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center"><i data-lucide="camera" class="w-6 h-6"></i></div>
-            <span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">CAMERA AI WIZCOLOR</span>
-          </div>
-          <h3 class="text-lg font-black text-slate-900">Đối Soát 4MP Chống Thất Thoát Quầy Lễ Tân</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Xem trực tiếp Camera gắn từng phòng ở chế độ Auto siêu mượt. Tự động chụp ảnh bằng chứng 4MP mỗi khi Check-in và Thu tiền, kèm chuông báo khách tới quầy.</p>
-        </div>
-
-        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3.5">
-          <div class="flex items-center justify-between">
-            <div class="w-12 h-12 rounded-2xl bg-cyan-600 text-white flex items-center justify-center"><i data-lucide="zap" class="w-6 h-6"></i></div>
-            <span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">IOT TIẾT KIỆM 30% ĐIỆN</span>
-          </div>
-          <h3 class="text-lg font-black text-slate-900">Tự Động Đóng / Ngắt Điện Phòng Thông Minh</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Kết nối rơ-le Home Assistant: tự bật điều hòa 25°C đón khách khi Check-in, tự ngắt tải nặng khi khách ra ngoài và tắt toàn bộ điện khi Checkout.</p>
-        </div>
-
-        <div class="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all space-y-3.5">
-          <div class="flex items-center justify-between">
-            <div class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center"><i data-lucide="hard-drive" class="w-6 h-6"></i></div>
-            <span class="text-[10px] font-black uppercase px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">PORTABLE OFFLINE-FIRST</span>
-          </div>
-          <h3 class="text-lg font-black text-slate-900">1 File Chạy Ngay — Dữ Liệu Riêng Tuyệt Đối</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Đóng gói Portable gọn nhẹ, không cần cài đặt phức tạp, mất mạng vẫn chạy bình thường. Dữ liệu lưu gọn trong 1 file SQLite, sao lưu 1 chạm an toàn.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. 3D PIXAR SHOWCASE -->
-  <section id="qr-showcase" class="py-20 bg-[#08191a] border-y border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
-        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#ffca40]/15 border border-[#ffca40]/30 text-[#ffca40] text-xs font-extrabold uppercase tracking-wider">Đột Phá Trải Nghiệm Khách Lưu Trú</span>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">Quét Mã QR Tại Phòng — Chuông Báo Ngay Quầy Thu Ngân</h2>
-        <p class="text-sm sm:text-base text-slate-300">Tăng ngay 20–35% doanh thu dịch vụ ăn uống &amp; minibar mà không cần thêm nhân sự chạy bàn.</p>
-      </div>
-
-      <div class="grid lg:grid-cols-2 gap-8">
-        <div class="rounded-3xl bg-slate-900/90 border border-white/10 overflow-hidden shadow-2xl flex flex-col">
-          <div class="relative aspect-video overflow-hidden bg-black">
-            <img src="/assets/qr-guest-3d.jpg" alt="Khách quét mã QR tại phòng" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#0d6e66]/90 border border-[#ffca40]/60 text-white text-xs font-black">BƯỚC 1 • KHÁCH TẠI PHÒNG</span>
-          </div>
-          <div class="p-6 space-y-2.5 flex-1">
-            <h3 class="text-xl font-black text-[#ffca40]">Quét QR Đặt Món POS &amp; Gọi Phục Vụ Không Cần Tải App</h3>
-            <p class="text-sm text-slate-300 leading-relaxed">Mỗi phòng có 1 tem QR đặt trên bàn. Khách mở Camera hoặc Zalo (Wi-Fi nội bộ) xem menu có ảnh, giá niêm yết, chọn món hoặc bấm 1 chạm gọi khăn, nước suối, dọn phòng.</p>
-          </div>
-        </div>
-
-        <div class="rounded-3xl bg-slate-900/90 border border-white/10 overflow-hidden shadow-2xl flex flex-col">
-          <div class="relative aspect-video overflow-hidden bg-black">
-            <img src="/assets/qr-cashier-3d.jpg" alt="Thu ngân nhận chuông báo Ding-Ding" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#ffca40] text-[#061314] text-xs font-black">BƯỚC 2 • QUẦY THU NGÂN</span>
-          </div>
-          <div class="p-6 space-y-2.5 flex-1">
-            <h3 class="text-xl font-black text-emerald-400">Chuông Ding-Ding Nổi Ngay Màn Hình — 1 Chạm Ghi Vào Hóa Đơn</h3>
-            <p class="text-sm text-slate-300 leading-relaxed">Tín hiệu bắn thẳng về máy thu ngân kèm chuông báo và danh sách món chi tiết. Lễ tân bấm <strong>Xác Nhận &amp; Ghi Phòng</strong>, hệ thống tự động cộng vào Folio phòng và xuất Hóa Đơn K80.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. VIDEO DEMO THEATER -->
-  <section id="video-demo" class="py-20 bg-[#061314]">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
-        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-extrabold uppercase tracking-wider">Video Hướng Dẫn Trực Quan</span>
-        <h2 class="text-3xl sm:text-4xl font-black text-white">Xem Cách Phần Mềm Vận Hành Chỉ Trong 90 Giây</h2>
-      </div>
-
-      <div class="flex flex-wrap items-center justify-center gap-3 mb-6">
-        <button id="btn-vid-showcase" type="button" onclick="switchVideo('showcase')" class="px-5 py-3 rounded-2xl text-xs sm:text-sm font-extrabold bg-[#ffca40] text-[#061314] shadow-lg transition-all">
-          🎬 Phim 3D Check-in, Quét CCCD &amp; Camera (1p30s • Có Thuyết Minh)
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-5">
+        <button id="btn-vid-showcase" type="button" onclick="switchVideo('showcase')" class="px-3.5 py-2 rounded-lg text-xs font-bold bg-brand-600 text-white shadow-xs transition-colors">
+          Video 3D tổng quan (1p30s • Có thuyết minh)
         </button>
-        <button id="btn-vid-basic" type="button" onclick="switchVideo('basic')" class="px-5 py-3 rounded-2xl text-xs sm:text-sm font-extrabold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-all">
-          ▶ Hướng Dẫn Sử Dụng Cơ Bản (1p30s)
+        <button id="btn-vid-basic" type="button" onclick="switchVideo('basic')" class="px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
+          Hướng dẫn cơ bản (1p30s)
         </button>
-        <button id="btn-vid-qr" type="button" onclick="switchVideo('qr')" class="px-5 py-3 rounded-2xl text-xs sm:text-sm font-extrabold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-all">
-          📱 Mô Phỏng 3D Mã QR Từng Phòng (26s)
+        <button id="btn-vid-qr" type="button" onclick="switchVideo('qr')" class="px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
+          QR gọi món 3D (26s)
         </button>
       </div>
 
-      <div class="rounded-3xl overflow-hidden border-2 border-[#ffca40]/40 bg-black shadow-2xl">
+      <div class="rounded-2xl overflow-hidden border border-slate-200 bg-black shadow-md">
         <video id="demo-video" controls playsinline preload="metadata" poster="/assets/qr-cashier-3d.jpg" class="w-full aspect-video bg-black">
           <source id="demo-source" src="/assets/PMVN-SmartHotel-3D-Showcase-90s.mp4" type="video/mp4" />
         </video>
@@ -310,62 +237,165 @@
     </div>
   </section>
 
-  <!-- 6. PRICING -->
-  <section id="pricing" class="py-20 bg-[#f6f8f7] text-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
-        <span class="inline-block px-3.5 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-extrabold uppercase tracking-wider">Bảng Giá Minh Bạch • Không Phí Ẩn</span>
-        <h2 class="text-3xl sm:text-4xl font-black text-slate-900">Đầu Tư 1 Lần — Sở Hữu Bản Quyền Trọn Đời</h2>
-        <p class="text-sm sm:text-base text-slate-600">Tiết kiệm hàng chục triệu đồng phí thuê bao Cloud mỗi năm. Miễn phí cài đặt &amp; hướng dẫn nhân viên.</p>
+  <!-- 4. FEATURES -->
+  <section id="features" class="py-12 sm:py-16 bg-slate-50 border-y border-slate-200/70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+        <p class="text-xs font-bold uppercase tracking-wider text-brand-600">Tính năng cốt lõi</p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Đủ mọi nghiệp vụ khách sạn trên một màn hình</h2>
+        <p class="text-sm text-slate-600">Thiết kế đơn giản cho lễ tân Việt Nam — nhân viên mới chỉ cần 5 phút làm quen.</p>
       </div>
 
-      <div class="grid lg:grid-cols-3 gap-7 items-stretch">
-        <!-- Standard -->
-        <div class="rounded-3xl p-7 bg-white border-2 border-emerald-500/40 shadow-sm flex flex-col justify-between">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="bg-white rounded-2xl p-5 border border-slate-200/90 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center"><i data-lucide="id-card" class="w-5 h-5"></i></div>
+          <h3 class="text-base font-bold text-slate-900">Quét CCCD &amp; Khai báo lưu trú</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Quét mã QR trên CCCD gắn chip hoặc chụp Hộ chiếu tự điền thông tin trong 3 giây. Xuất file Excel nộp Cổng Dịch Vụ Công chỉ với 1 nút bấm.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 border border-slate-200/90 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center"><i data-lucide="qr-code" class="w-5 h-5"></i></div>
+          <h3 class="text-base font-bold text-slate-900">Mã QR gọi món riêng từng phòng</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Khách quét QR trên bàn bằng Camera/Zalo để đặt đồ ăn, nước uống hoặc gọi phục vụ. Tự khóa khi phòng trống, báo chuông về quầy thu ngân.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 border border-slate-200/90 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center"><i data-lucide="camera" class="w-5 h-5"></i></div>
+          <h3 class="text-base font-bold text-slate-900">Camera 4MP đối soát quầy lễ tân</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Xem trực tiếp Camera gắn từng phòng ngay trên phần mềm. Tự chụp ảnh 4MP lưu hồ sơ lúc Check-in và Thu tiền Checkout để chống thất thoát.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 border border-slate-200/90 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center"><i data-lucide="receipt" class="w-5 h-5"></i></div>
+          <h3 class="text-base font-bold text-slate-900">POS bán hàng, VietQR &amp; In K80</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Chọn món cảm ứng mượt mà, trừ kho tự động, tạo mã VietQR chuyển khoản động, quy đổi ngoại tệ USD/EUR và in hóa đơn nhiệt K80.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 border border-slate-200/90 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center"><i data-lucide="zap" class="w-5 h-5"></i></div>
+          <h3 class="text-base font-bold text-slate-900">Tự động đóng / ngắt điện phòng</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Kết nối Home Assistant tự bật điều hòa đón khách lúc nhận phòng, ngắt tải khi khách ra ngoài và tắt toàn bộ thiết bị khi trả phòng.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 border border-slate-200/90 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center"><i data-lucide="hard-drive" class="w-5 h-5"></i></div>
+          <h3 class="text-base font-bold text-slate-900">Portable Offline-First — Bảo mật 100%</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Giải nén chạy ngay không cần cài đặt phức tạp, mất mạng vẫn hoạt động bình thường. Toàn bộ dữ liệu lưu tại máy chủ khách sạn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. QR WORKFLOW -->
+  <section id="qr-showcase" class="py-12 sm:py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+        <p class="text-xs font-bold uppercase tracking-wider text-brand-600">Tăng doanh thu dịch vụ</p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Khách quét QR tại phòng — Thu ngân nhận đơn tức thì</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="aspect-video bg-slate-100 overflow-hidden">
+            <img src="/assets/qr-guest-3d.jpg" alt="Khách quét mã QR tại phòng" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-5 space-y-1.5">
+            <span class="inline-block text-[11px] font-bold text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded">Bước 1 • Tại phòng khách</span>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">Quét QR xem menu &amp; gọi phục vụ không cần tải App</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Mỗi phòng có 1 tem QR đặt trên bàn. Khách mở Camera hoặc Zalo xem thực đơn có ảnh, đặt đồ ăn/minibar hoặc gọi dọn phòng ngay trên điện thoại.</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="aspect-video bg-slate-100 overflow-hidden">
+            <img src="/assets/qr-cashier-3d.jpg" alt="Thu ngân nhận chuông báo Ding-Ding" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-5 space-y-1.5">
+            <span class="inline-block text-[11px] font-bold text-amber-800 bg-amber-50 px-2.5 py-0.5 rounded">Bước 2 • Tại quầy thu ngân</span>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">Chuông báo nổi màn hình — 1 chạm cộng thẳng tiền phòng</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Đơn hàng bắn thẳng về máy quầy lễ tân kèm chuông Ding-Ding. Thu ngân bấm <strong>Xác nhận &amp; Ghi phòng</strong>, phần mềm tự cộng Folio và trừ kho.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PRICING -->
+  <section id="pricing" class="py-12 sm:py-16 bg-slate-50 border-y border-slate-200/70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+        <p class="text-xs font-bold uppercase tracking-wider text-brand-600">Bảng giá minh bạch</p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Mua bản quyền 1 lần — Dùng vĩnh viễn</h2>
+        <p class="text-sm text-slate-600">Bắt đầu miễn phí ngay hôm nay với bản Standard Portable, nâng cấp bất cứ lúc nào.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
+        <!-- Standard FREE -->
+        <div class="rounded-2xl p-6 bg-white border-2 border-brand-600/30 flex flex-col justify-between shadow-xs">
           <div class="space-y-4">
-            <div class="flex items-center justify-between"><h3 class="text-xl font-black">Gói Standard</h3><span class="text-[10px] font-black uppercase px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">MIỄN PHÍ • PORTABLE</span></div>
-            <div><p class="text-3xl font-black font-mono text-emerald-600">Miễn Phí <span class="text-base font-bold text-slate-400">(0 đ)</span></p><p class="text-xs font-semibold text-slate-500 mt-1">Tải bản Portable Windows • Giải nén chạy ngay</p></div>
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="text-lg font-extrabold text-slate-900">Gói Standard</h3>
+              <span class="text-[10px] font-bold uppercase px-2.5 py-1 rounded bg-emerald-50 text-emerald-700">Miễn phí</span>
+            </div>
+            <div>
+              <p class="text-3xl font-extrabold text-brand-700">0 đ</p>
+              <p class="text-xs text-slate-500 mt-1">Bản Portable Windows • Giải nén chạy ngay</p>
+            </div>
             <ul class="space-y-2.5 pt-3 border-t border-slate-100 text-sm text-slate-700">
               <li>✓ Sơ đồ phòng trực quan (Homestay &amp; Nhà nghỉ)</li>
               <li>✓ Check-in / Check-out 1 chạm, tính tiền tự động</li>
               <li>✓ POS bán đồ ăn, minibar &amp; in Hóa Đơn K80</li>
               <li>✓ Quét CCCD &amp; Xuất Excel Khai Báo Công An</li>
-              <li>✓ Báo cáo Doanh thu, KPI, phân quyền nhân viên</li>
-              <li>✓ Chạy 100% Offline-First, không phí Cloud</li>
+              <li>✓ Báo cáo Doanh thu, phân quyền nhân viên</li>
+              <li>✓ Chạy 100% mạng nội bộ, không phí Cloud</li>
             </ul>
           </div>
-          <div class="mt-8 space-y-2">
-            <a href="https://github.com/PhuongMinhVN/omoshop-landing/raw/downloads/PMVN-PMS-Portable.zip" download="PMVN-PMS-Portable.zip" class="w-full py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-center text-sm font-black flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20 transition-all">
+          <div class="mt-6 space-y-1.5">
+            <a href="https://github.com/PhuongMinhVN/omoshop-landing/raw/downloads/PMVN-PMS-Portable.zip" download="PMVN-PMS-Portable.zip" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-center text-sm font-bold flex items-center justify-center gap-2 transition-colors">
               <i data-lucide="download" class="w-4 h-4"></i>
               <span>Tải Bản Portable Miễn Phí</span>
             </a>
-            <p class="text-[11px] text-center text-slate-500 font-medium">Windows 10/11 64-bit • Không cần cài đặt</p>
+            <p class="text-[11px] text-center text-slate-500">Windows 10/11 64-bit • 65 MB</p>
           </div>
         </div>
 
         <!-- Pro AI -->
-        <div class="rounded-3xl p-7 bg-[#081f20] text-white border-2 border-[#ffca40] shadow-2xl lg:-translate-y-2 flex flex-col justify-between">
+        <div class="rounded-2xl p-6 bg-slate-900 text-white border-2 border-slate-900 flex flex-col justify-between shadow-lg">
           <div class="space-y-4">
-            <div class="flex items-center justify-between"><h3 class="text-xl font-black">Gói Pro AI</h3><span class="text-[10px] font-black uppercase px-3 py-1 rounded-full bg-[#ffca40] text-[#061314]">Phổ Biến Nhất</span></div>
-            <div><p class="text-3xl font-black font-mono text-[#ffca40]">6.900.000 đ</p><p class="text-xs font-semibold text-emerald-300 mt-1">Bản quyền vĩnh viễn / 1 máy chủ</p></div>
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="text-lg font-extrabold text-white">Gói Pro AI</h3>
+              <span class="text-[10px] font-bold uppercase px-2.5 py-1 rounded bg-amber-400 text-slate-950">Phổ biến nhất</span>
+            </div>
+            <div>
+              <p class="text-3xl font-extrabold text-amber-400">6.900.000 đ</p>
+              <p class="text-xs text-slate-400 mt-1">Bản quyền vĩnh viễn / 1 máy chủ</p>
+            </div>
             <ul class="space-y-2.5 pt-3 border-t border-white/10 text-sm text-slate-200">
               <li>✓ Toàn bộ tính năng Gói Standard (đến 30 phòng)</li>
-              <li>✓ Mã QR Gọi Món POS &amp; Gọi Phục Vụ từng phòng (LAN)</li>
-              <li>✓ Chuông báo Ding-Ding real-time về máy thu ngân</li>
-              <li>✓ Tích hợp Camera AI Dahua WizColor 4MP từng phòng</li>
+              <li>✓ Mã QR Gọi Món POS &amp; Gọi Phục Vụ từng phòng</li>
+              <li>✓ Chuông báo Ding-Ding real-time về quầy thu ngân</li>
+              <li>✓ Tích hợp Camera AI Dahua 4MP từng phòng</li>
               <li>✓ Tự chụp ảnh 4MP đối soát Check-in &amp; Thu tiền</li>
               <li>✓ Quy đổi ngoại tệ USD/EUR &amp; VietQR động</li>
-              <li>✓ Hỗ trợ cài đặt &amp; bảo hành kỹ thuật ưu tiên 12 tháng</li>
+              <li>✓ Cài đặt &amp; bảo hành kỹ thuật ưu tiên 12 tháng</li>
             </ul>
           </div>
-          <a href="#contact" onclick="selectPlan('Gói Pro AI (6.900.000 đ)')" class="mt-8 w-full py-3.5 rounded-2xl bg-[#ffca40] hover:bg-amber-400 text-[#061314] text-center text-sm font-black block shadow-lg">Chọn Gói Pro AI &amp; Nhận Tư Vấn</a>
+          <a href="#contact" onclick="selectPlan('Gói Pro AI (6.900.000 đ)')" class="mt-6 w-full py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-center text-sm font-extrabold block transition-colors">
+            Đăng Ký Gói Pro AI
+          </a>
         </div>
 
         <!-- Enterprise -->
-        <div class="rounded-3xl p-7 bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div class="rounded-2xl p-6 bg-white border border-slate-200 flex flex-col justify-between shadow-xs">
           <div class="space-y-4">
-            <div class="flex items-center justify-between"><h3 class="text-xl font-black">Gói Enterprise IoT</h3><span class="text-[10px] font-black uppercase px-3 py-1 rounded-full bg-slate-100 text-slate-700">Khách Sạn &amp; Resort</span></div>
-            <div><p class="text-3xl font-black font-mono text-[#0d6e66]">Liên Hệ</p><p class="text-xs font-semibold text-slate-500 mt-1">Triển khai trọn gói theo quy mô</p></div>
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="text-lg font-extrabold text-slate-900">Gói Enterprise IoT</h3>
+              <span class="text-[10px] font-bold uppercase px-2.5 py-1 rounded bg-slate-100 text-slate-700">Khách sạn lớn</span>
+            </div>
+            <div>
+              <p class="text-3xl font-extrabold text-slate-900">Liên Hệ</p>
+              <p class="text-xs text-slate-500 mt-1">Triển khai trọn gói theo quy mô</p>
+            </div>
             <ul class="space-y-2.5 pt-3 border-t border-slate-100 text-sm text-slate-700">
               <li>✓ Toàn bộ tính năng Gói Pro AI (không giới hạn phòng)</li>
               <li>✓ Home Assistant tự ngắt điều hòa tiết kiệm 30% điện</li>
@@ -374,65 +404,67 @@
               <li>✓ Hỗ trợ kỹ thuật 24/7 tận nơi / Ultraview</li>
             </ul>
           </div>
-          <a href="#contact" onclick="selectPlan('Gói Enterprise IoT (Liên Hệ)')" class="mt-8 w-full py-3.5 rounded-2xl bg-[#0d6e66] hover:bg-[#09524c] text-white text-center text-sm font-black block">Liên Hệ Tư Vấn Trọn Gói</a>
+          <a href="#contact" onclick="selectPlan('Gói Enterprise IoT (Liên Hệ)')" class="mt-6 w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-center text-sm font-bold block transition-colors">
+            Liên Hệ Tư Vấn
+          </a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 7. FAQ -->
-  <section id="faq" class="py-20 bg-[#08191a] border-t border-white/10">
+  <section id="faq" class="py-12 sm:py-16 bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 space-y-3">
-      <div class="text-center mb-10 space-y-2">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400">Giải Đáp Nhanh</span>
-        <h2 class="text-3xl font-black text-white">Câu Hỏi Thường Gặp</h2>
+      <div class="text-center mb-8 space-y-1.5">
+        <p class="text-xs font-bold uppercase tracking-wider text-brand-600">Giải đáp nhanh</p>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Câu hỏi thường gặp</h2>
       </div>
-      <details open class="rounded-2xl bg-slate-900/80 border border-white/10 p-5">
-        <summary class="text-sm sm:text-base font-extrabold text-white cursor-pointer">Mất mạng Internet phần mềm có hoạt động được không?</summary>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">Hoạt động bình thường 100%. Toàn bộ máy chủ, cơ sở dữ liệu SQLite, in hóa đơn K80 và mã QR gọi món đều chạy trực tiếp trong mạng Wi-Fi nội bộ của khách sạn.</p>
+      <details open class="rounded-xl bg-slate-50 border border-slate-200 p-4 sm:p-5">
+        <summary class="text-sm sm:text-base font-bold text-slate-900 cursor-pointer">Mất mạng Internet phần mềm có hoạt động được không?</summary>
+        <p class="mt-2.5 text-sm text-slate-600 leading-relaxed">Hoạt động bình thường 100%. Toàn bộ máy chủ, cơ sở dữ liệu SQLite, in hóa đơn K80 và mã QR gọi món đều chạy trực tiếp trong mạng Wi-Fi nội bộ của khách sạn.</p>
       </details>
-      <details class="rounded-2xl bg-slate-900/80 border border-white/10 p-5">
-        <summary class="text-sm sm:text-base font-extrabold text-white cursor-pointer">Máy tính quầy lễ tân chưa cài Node.js có chạy được không?</summary>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">Chạy ngay chỉ với 1 cú click vào biểu tượng PMVN PMS Hotel. Bộ cài Portable đã đóng gói sẵn bộ chạy độc lập, chỉ cần Windows 10/11 64-bit.</p>
+      <details class="rounded-xl bg-slate-50 border border-slate-200 p-4 sm:p-5">
+        <summary class="text-sm sm:text-base font-bold text-slate-900 cursor-pointer">Tải bản Portable về có cần cài đặt gì thêm không?</summary>
+        <p class="mt-2.5 text-sm text-slate-600 leading-relaxed">Không cần cài đặt phức tạp. Bạn chỉ cần giải nén file ZIP và nhấn đúp vào <strong>RunPMSHotel.exe</strong> (hỗ trợ Windows 10/11 64-bit).</p>
       </details>
-      <details class="rounded-2xl bg-slate-900/80 border border-white/10 p-5">
-        <summary class="text-sm sm:text-base font-extrabold text-white cursor-pointer">Dữ liệu khách sạn lưu ở đâu? Có mất phí duy trì hàng tháng không?</summary>
-        <p class="mt-3 text-sm text-slate-300 leading-relaxed">100% dữ liệu lưu tại máy chủ quầy lễ tân (Data\pmvn.db), hoàn toàn bảo mật. Mua bản quyền 1 lần dùng vĩnh viễn, không mất phí thuê bao Cloud.</p>
+      <details class="rounded-xl bg-slate-50 border border-slate-200 p-4 sm:p-5">
+        <summary class="text-sm sm:text-base font-bold text-slate-900 cursor-pointer">Dữ liệu lưu ở đâu? Có mất phí duy trì hàng tháng không?</summary>
+        <p class="mt-2.5 text-sm text-slate-600 leading-relaxed">100% dữ liệu lưu trực tiếp tại máy tính quầy lễ tân (Data\pmvn.db), hoàn toàn bảo mật và không mất phí duy trì Cloud hàng tháng.</p>
       </details>
     </div>
   </section>
 
   <!-- 8. CONTACT -->
-  <section id="contact" class="py-20 bg-gradient-to-b from-[#061314] to-[#0a2324]">
+  <section id="contact" class="py-12 sm:py-16 bg-slate-50 border-t border-slate-200/70">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="rounded-3xl bg-slate-900/90 border border-[#ffca40]/35 p-6 sm:p-10 shadow-2xl grid lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-6 space-y-5">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ffca40]/15 text-[#ffca40] text-xs font-black uppercase">Cài Đặt Dùng Thử Miễn Phí</span>
-          <h2 class="text-3xl font-black text-white leading-tight">Nâng Cấp Khách Sạn Của Bạn Ngay Hôm Nay</h2>
-          <p class="text-sm text-slate-300 leading-relaxed">Để lại thông tin để kỹ sư phần mềm Phương Minh gửi bản cài Portable chạy thử ngay trên máy quầy lễ tân của bạn.</p>
-          <a href="tel:0941204125" class="flex items-center gap-3 p-3.5 rounded-2xl bg-white/5 border border-white/10 hover:border-[#ffca40]/50">
-            <div class="w-10 h-10 rounded-xl bg-[#ffca40] text-[#061314] flex items-center justify-center shrink-0"><i data-lucide="phone" class="w-5 h-5"></i></div>
-            <div>
-              <p class="text-[11px] font-bold text-slate-400 uppercase">Hotline / Zalo Kỹ Thuật 24/7</p>
-              <p class="text-base font-black text-white font-mono">0941 204 125 (Kỹ sư Chu Trung)</p>
+      <div class="rounded-2xl bg-white border border-slate-200 p-5 sm:p-8 shadow-sm grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 space-y-4">
+          <p class="text-xs font-bold uppercase tracking-wider text-brand-600">Hỗ trợ triển khai</p>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">Cần tư vấn lắp đặt &amp; tích hợp Camera AI?</h2>
+          <p class="text-sm text-slate-600 leading-relaxed">Để lại thông tin hoặc gọi trực tiếp để kỹ sư Phương Minh hỗ trợ cài đặt miễn phí qua Ultraview.</p>
+          <a href="tel:0941204125" class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-600 transition-colors">
+            <div class="w-10 h-10 rounded-lg bg-brand-600 text-white flex items-center justify-center shrink-0"><i data-lucide="phone" class="w-5 h-5"></i></div>
+            <div class="min-w-0">
+              <p class="text-[11px] font-semibold text-slate-500 uppercase">Hotline / Zalo Kỹ Thuật 24/7</p>
+              <p class="text-sm sm:text-base font-extrabold text-slate-900 truncate">0941 204 125 (Kỹ sư Chu Trung)</p>
             </div>
           </a>
         </div>
 
-        <div class="lg:col-span-6">
-          <form id="lead-form" class="space-y-4 bg-slate-950/70 p-6 rounded-2xl border border-white/10">
+        <div class="lg:col-span-7">
+          <form id="lead-form" class="space-y-3.5 bg-slate-50 p-5 rounded-xl border border-slate-200">
             <div>
-              <label class="block text-xs font-bold text-slate-300 uppercase mb-1.5">Tên Khách Sạn / Homestay *</label>
-              <input id="f-hotel" type="text" required placeholder="VD: Homie Boutique Hotel" class="w-full min-h-[46px] px-4 rounded-xl bg-slate-900 border border-white/15 text-sm text-white focus:border-[#ffca40] focus:outline-none" />
+              <label class="block text-xs font-bold text-slate-700 mb-1">Tên Khách Sạn / Homestay *</label>
+              <input id="f-hotel" type="text" required placeholder="VD: Homie Boutique Hotel" class="w-full h-11 px-3.5 rounded-lg bg-white border border-slate-300 text-sm text-slate-900 focus:border-brand-600 focus:outline-none" />
             </div>
             <div>
-              <label class="block text-xs font-bold text-slate-300 uppercase mb-1.5">Số Điện Thoại / Zalo *</label>
-              <input id="f-phone" type="tel" required placeholder="VD: 0912 345 678" class="w-full min-h-[46px] px-4 rounded-xl bg-slate-900 border border-white/15 text-sm font-mono text-white focus:border-[#ffca40] focus:outline-none" />
+              <label class="block text-xs font-bold text-slate-700 mb-1">Số Điện Thoại / Zalo *</label>
+              <input id="f-phone" type="tel" required placeholder="VD: 0912 345 678" class="w-full h-11 px-3.5 rounded-lg bg-white border border-slate-300 text-sm text-slate-900 focus:border-brand-600 focus:outline-none" />
             </div>
-            <div class="grid grid-cols-2 gap-3">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label class="block text-xs font-bold text-slate-300 uppercase mb-1.5">Quy Mô Phòng</label>
-                <select id="f-rooms" class="w-full min-h-[46px] px-3 rounded-xl bg-slate-900 border border-white/15 text-xs font-bold text-white">
+                <label class="block text-xs font-bold text-slate-700 mb-1">Quy Mô Phòng</label>
+                <select id="f-rooms" class="w-full h-11 px-3 rounded-lg bg-white border border-slate-300 text-sm text-slate-900">
                   <option>Dưới 10 phòng</option>
                   <option selected>10 - 20 phòng</option>
                   <option>20 - 50 phòng</option>
@@ -440,31 +472,32 @@
                 </select>
               </div>
               <div>
-                <label class="block text-xs font-bold text-slate-300 uppercase mb-1.5">Gói Quan Tâm</label>
-                <select id="f-plan" class="w-full min-h-[46px] px-3 rounded-xl bg-slate-900 border border-white/15 text-xs font-bold text-white">
+                <label class="block text-xs font-bold text-slate-700 mb-1">Gói Quan Tâm</label>
+                <select id="f-plan" class="w-full h-11 px-3 rounded-lg bg-white border border-slate-300 text-sm text-slate-900">
                   <option>Gói Standard (Miễn Phí - Portable)</option>
                   <option selected>Gói Pro AI (6.900.000 đ)</option>
                   <option>Gói Enterprise IoT (Liên Hệ)</option>
                 </select>
               </div>
             </div>
-            <button id="f-btn" type="submit" class="w-full py-4 rounded-xl bg-[#ffca40] hover:bg-amber-400 text-[#061314] font-black text-sm shadow-lg transition-all">
-              Nhận Bản Dùng Thử &amp; Báo Giá Ngay
+            <button id="f-btn" type="submit" class="w-full py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-sm transition-colors">
+              Gửi Yêu Cầu Tư Vấn Qua Zalo
             </button>
-            <p id="f-msg" class="hidden text-center text-xs font-bold text-emerald-400 pt-1"></p>
+            <p id="f-msg" class="hidden text-center text-xs font-semibold text-brand-700 pt-1"></p>
           </form>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="py-8 bg-[#040c0d] border-t border-white/10 text-center text-xs text-slate-400">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <div class="flex items-center gap-2.5">
-        <img src="/assets/pmvn-logo.png" alt="PMVN" class="w-7 h-7 rounded-lg" />
-        <span class="font-bold text-slate-200">Phương Minh Software PMS — Smart Hospitality Suite 2027</span>
+  <!-- FOOTER -->
+  <footer class="py-7 bg-white border-t border-slate-200 text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <img src="/assets/pmvn-logo.png" alt="PMVN" class="w-6 h-6 rounded" />
+        <span class="font-bold text-slate-800">Phương Minh Software PMS</span>
       </div>
-      <p>© 2026–2027 Chu Gia Security &amp; PMVN. Hotline: 0941 204 125 • support@pmvn.vn</p>
+      <p>© 2026–2027 Chu Gia Security &amp; PMVN · Hotline: 0941 204 125 · support@pmvn.vn</p>
     </div>
   </footer>
 
@@ -474,8 +507,8 @@
     function switchVideo(which) {
       const video = document.getElementById("demo-video");
       const source = document.getElementById("demo-source");
-      const activeCls = "px-5 py-3 rounded-2xl text-xs sm:text-sm font-extrabold bg-[#ffca40] text-[#061314] shadow-lg transition-all";
-      const idleCls = "px-5 py-3 rounded-2xl text-xs sm:text-sm font-extrabold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 transition-all";
+      const activeCls = "px-3.5 py-2 rounded-lg text-xs font-bold bg-brand-600 text-white shadow-xs transition-colors";
+      const idleCls = "px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors";
       const map = {
         showcase: { src: "/assets/PMVN-SmartHotel-3D-Showcase-90s.mp4", poster: "/assets/qr-cashier-3d.jpg", btn: "btn-vid-showcase" },
         basic: { src: "/assets/Huong-Dan-Su-Dung-Co-Ban-PMVN-PMS.mp4", poster: "/assets/qr-cashier-3d.jpg", btn: "btn-vid-basic" },
@@ -504,10 +537,10 @@
       const phone = document.getElementById("f-phone").value.trim();
       const roomCount = document.getElementById("f-rooms").value;
       const plan = document.getElementById("f-plan").value;
-      const summary = `Đăng ký dùng thử PMVN PMS:\n- Khách sạn: ${hotelName}\n- SĐT/Zalo: ${phone}\n- Quy mô: ${roomCount}\n- Gói: ${plan}`;
+      const summary = `Đăng ký tư vấn PMVN PMS:\n- Khách sạn: ${hotelName}\n- SĐT/Zalo: ${phone}\n- Quy mô: ${roomCount}\n- Gói: ${plan}`;
 
       btn.disabled = true;
-      btn.textContent = "Đang gửi thông tin...";
+      btn.textContent = "Đang xử lý...";
       try {
         const res = await fetch("/api/contact", {
           method: "POST",
@@ -521,14 +554,14 @@
           return;
         }
       } catch {
-        // Khi chạy web tĩnh trên Cloudflare Pages, tự copy nội dung & mở Zalo Kỹ thuật 0941 204 125
+        // Khi chạy tĩnh trên Cloudflare Pages
       } finally {
         btn.disabled = false;
-        btn.textContent = "Nhận Bản Dùng Thử & Báo Giá Ngay";
+        btn.textContent = "Gửi Yêu Cầu Tư Vấn Qua Zalo";
       }
 
       try { await navigator.clipboard.writeText(summary); } catch {}
-      msg.innerHTML = '✓ Đã tạo yêu cầu! <a href="https://zalo.me/0941204125" target="_blank" class="underline text-[#ffca40]">Bấm vào đây mở Zalo 0941 204 125</a> (đã sao chép sẵn nội dung để dán).';
+      msg.innerHTML = '✓ Đã sao chép nội dung! <a href="https://zalo.me/0941204125" target="_blank" class="underline font-bold">Bấm mở Zalo 0941 204 125</a> để gửi ngay.';
       msg.classList.remove("hidden");
       window.open("https://zalo.me/0941204125", "_blank");
     });

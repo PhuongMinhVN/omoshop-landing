@@ -553,8 +553,8 @@
                 lớn</span>
             </div>
             <div>
-              <p class="text-3xl font-extrabold text-slate-900">Liên Hệ</p>
-              <p class="text-xs text-slate-500 mt-1">Triển khai trọn gói theo quy mô</p>
+              <p class="text-3xl font-extrabold text-slate-900">Từ 17,05tr</p>
+              <p class="text-xs text-slate-500 mt-1">11,1tr hạ tầng + 5,95tr / phòng thông minh</p>
             </div>
             <ul class="space-y-2.5 pt-3 border-t border-slate-100 text-sm text-slate-700">
               <li>✓ Toàn bộ tính năng Gói Pro AI (không giới hạn phòng)</li>
@@ -566,10 +566,170 @@
               <li>✓ Hỗ trợ kỹ thuật 24/7 tận nơi / Ultraview</li>
             </ul>
           </div>
-          <a href="#contact" onclick="selectPlan('Gói Enterprise IoT (Liên Hệ)')"
+          <a href="#smart-calculator"
             class="mt-6 w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-center text-sm font-bold block transition-colors">
-            Liên Hệ Tư Vấn
+            Tính Dự Toán Trọn Gói ↓
           </a>
+        </div>
+      </div>
+
+      <!-- PHƯƠNG ÁN TRIỂN KHAI 3 BƯỚC & DỰ TOÁN PHÒNG THÔNG MINH (THEO BÁO GIÁ CHUẨN PMVN) -->
+      <div id="smart-calculator" class="mt-12 space-y-8">
+        <div class="text-center max-w-3xl mx-auto space-y-2">
+          <p class="text-xs font-bold uppercase tracking-wider text-brand-600">Phương án triển khai &amp; Dự toán trọn gói</p>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Triển Khai Phòng Lưu Trú Thông Minh (SmartHotel IoT)</h3>
+          <p class="text-sm text-slate-600">Công thức minh bạch: <strong>11.100.000đ</strong> (Hạ tầng trung tâm + Bản quyền 1 lần) + <strong>5.950.000đ × Số phòng</strong>.</p>
+        </div>
+
+        <!-- 3 Bước triển khai -->
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 space-y-2">
+            <span class="inline-block text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded bg-emerald-50 text-emerald-700">Bước 1 • 0 đ</span>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900">Cài đặt miễn phí PMVN Free Core</h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Cài miễn phí phần mềm quản lý phòng, POS in bill K80 và quét CCCD nhanh tại quầy lễ tân trước khi quyết định lắp phần cứng.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 space-y-2">
+            <span class="inline-block text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded bg-brand-50 text-brand-700">Bước 2 • Lắp đặt</span>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900">Hạ tầng trung tâm &amp; Thiết bị phòng</h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Lắp Dell PC máy chủ 24/7, WiFi Ruijie, bản quyền SmartHotel và thi công CB thông minh, IR điều hòa, công tắc WiFi cho từng phòng.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 space-y-2">
+            <span class="inline-block text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded bg-amber-50 text-amber-800">Bước 3 • Bàn giao</span>
+            <h4 class="text-sm sm:text-base font-extrabold text-slate-900">Kịch bản tự động hóa 1 chạm (-30% điện)</h4>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Check-in tự cấp nguồn &amp; bật điều hòa 25°C; Khách ra ngoài tự ngắt tải nặng tiết kiệm 30% điện; Check-out ngắt toàn bộ điện phòng.</p>
+          </div>
+        </div>
+
+        <!-- Máy tính dự toán tương tác 1 - 30 phòng -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <div class="p-5 sm:p-7 border-b border-slate-100 grid lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-7 space-y-5">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-brand-600">Dự toán chi phí theo quy mô</p>
+                <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 mt-0.5">Kéo chọn số lượng phòng cần lắp đặt</h4>
+              </div>
+
+              <!-- 4 nút chọn nhanh chuẩn PDF -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                <button type="button" onclick="setSmartRooms(1)" data-preset="1" class="smart-preset p-2.5 rounded-xl border text-left transition-all bg-slate-50 border-slate-200 hover:border-brand-600">
+                  <p class="text-xs font-extrabold text-slate-900">1 Phòng Mẫu</p>
+                  <p class="text-[11px] font-mono font-bold text-slate-500 mt-0.5">17.050.000đ</p>
+                </button>
+                <button type="button" onclick="setSmartRooms(5)" data-preset="5" class="smart-preset p-2.5 rounded-xl border text-left transition-all bg-slate-50 border-slate-200 hover:border-brand-600">
+                  <p class="text-xs font-extrabold text-slate-900">5 Phòng</p>
+                  <p class="text-[11px] font-mono font-bold text-slate-500 mt-0.5">40.850.000đ</p>
+                </button>
+                <button type="button" onclick="setSmartRooms(10)" data-preset="10" class="smart-preset p-2.5 rounded-xl border text-left transition-all bg-brand-600 border-brand-600 text-white">
+                  <p class="text-xs font-extrabold">10 Phòng</p>
+                  <p class="text-[11px] font-mono font-bold text-emerald-100 mt-0.5">70.600.000đ</p>
+                </button>
+                <button type="button" onclick="setSmartRooms(15)" data-preset="15" class="smart-preset p-2.5 rounded-xl border text-left transition-all bg-slate-50 border-slate-200 hover:border-brand-600">
+                  <p class="text-xs font-extrabold text-slate-900">15 Phòng</p>
+                  <p class="text-[11px] font-mono font-bold text-slate-500 mt-0.5">100.350.000đ</p>
+                </button>
+              </div>
+
+              <!-- Slider 1 - 30 phòng -->
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2.5">
+                <div class="flex items-center justify-between">
+                  <label for="smart-room-slider" class="text-xs font-bold text-slate-700 uppercase">Số lượng phòng</label>
+                  <span id="smart-room-label" class="text-base font-extrabold font-mono text-brand-700">10 phòng</span>
+                </div>
+                <input id="smart-room-slider" type="range" min="1" max="30" step="1" value="10" oninput="setSmartRooms(this.value)" class="w-full h-2 bg-slate-200 rounded-lg cursor-pointer accent-[#0b6b61]" />
+                <div class="flex justify-between text-[11px] font-mono text-slate-400">
+                  <span>1 phòng</span><span>10 phòng</span><span>20 phòng</span><span>30 phòng</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kết quả dự toán trực tiếp -->
+            <div class="lg:col-span-5 rounded-2xl bg-slate-900 text-white p-5 sm:p-6 space-y-4">
+              <div class="pb-3.5 border-b border-white/10">
+                <p id="smart-total-title" class="text-[11px] font-bold uppercase tracking-wider text-amber-400">Tổng dự toán trọn gói (10 phòng)</p>
+                <p id="smart-total-price" class="text-3xl font-extrabold font-mono text-white mt-1">70.600.000đ</p>
+                <p class="text-xs text-slate-300 mt-1">Bình quân chỉ <strong id="smart-avg-price" class="text-amber-400 font-mono">7.060.000đ / phòng</strong></p>
+              </div>
+              <div class="space-y-2 text-xs">
+                <div class="flex justify-between text-slate-300">
+                  <span>Hạ tầng trung tâm &amp; bản quyền</span>
+                  <span class="font-mono font-bold text-white">11.100.000đ</span>
+                </div>
+                <div class="flex justify-between text-slate-300">
+                  <span id="smart-rooms-formula">Thiết bị &amp; thi công (10 × 5.950.000đ)</span>
+                  <span id="smart-rooms-cost" class="font-mono font-bold text-white">59.500.000đ</span>
+                </div>
+                <div class="flex justify-between text-emerald-400 font-bold pt-2 border-t border-white/10">
+                  <span>Phần mềm PMVN Free Core</span>
+                  <span class="font-mono">0đ (Miễn phí)</span>
+                </div>
+              </div>
+              <div class="space-y-2 pt-1">
+                <button type="button" onclick="consultSmartHotelZalo()" class="w-full py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs sm:text-sm font-extrabold flex items-center justify-center gap-2 transition-colors">
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  <span>Nhận Tư Vấn &amp; Khảo Sát Tận Nơi</span>
+                </button>
+                <a href="tel:0941204125" class="w-full py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors">
+                  <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-400"></i>
+                  <span>Hotline Kỹ Sư: 0941 204 125</span>
+                </a>
+                <p id="smart-copy-msg" class="hidden text-[11px] text-center text-emerald-400 font-semibold"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bảng kê chi tiết vật tư 1 phòng & Hạ tầng chung -->
+          <div class="p-5 sm:p-7 grid lg:grid-cols-2 gap-5 text-xs">
+            <div class="rounded-xl border border-slate-200 overflow-hidden">
+              <div class="px-4 py-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+                <span class="font-extrabold text-slate-900">1. Vật Tư &amp; Nhân Công / 01 Phòng</span>
+                <span class="font-mono font-extrabold text-brand-700">5.950.000đ</span>
+              </div>
+              <div class="divide-y divide-slate-100">
+                <div class="px-4 py-2.5 flex justify-between gap-3">
+                  <div><p class="font-bold text-slate-900">CB thông minh ×1</p><p class="text-slate-500">Đóng/ngắt nguồn tải chính phòng tự động</p></div>
+                  <span class="font-mono font-bold text-slate-900 shrink-0">1.100.000đ</span>
+                </div>
+                <div class="px-4 py-2.5 flex justify-between gap-3">
+                  <div><p class="font-bold text-slate-900">Bộ điều khiển IR điều hòa (Tuya / Broadlink) ×1</p><p class="text-slate-500">Bật/tắt và chỉnh nhiệt độ điều hòa tự động</p></div>
+                  <span class="font-mono font-bold text-slate-900 shrink-0">650.000đ</span>
+                </div>
+                <div class="px-4 py-2.5 flex justify-between gap-3">
+                  <div><p class="font-bold text-slate-900">Công tắc thông minh WiFi (vuông/chữ nhật lõm) ×2</p><p class="text-slate-500">Điều khiển đèn phòng &amp; đèn chào mừng (1.100.000đ × 2)</p></div>
+                  <span class="font-mono font-bold text-slate-900 shrink-0">2.200.000đ</span>
+                </div>
+                <div class="px-4 py-2.5 flex justify-between gap-3">
+                  <div><p class="font-bold text-slate-900">Công thi công, đấu nối &amp; cấu hình kịch bản ×1</p><p class="text-slate-500">Lắp đặt thực địa và đồng bộ phần mềm</p></div>
+                  <span class="font-mono font-bold text-slate-900 shrink-0">2.000.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-xl border border-slate-200 overflow-hidden flex flex-col justify-between">
+              <div>
+                <div class="px-4 py-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+                  <span class="font-extrabold text-slate-900">2. Hạ Tầng Trung Tâm &amp; Bản Quyền (Cố Định)</span>
+                  <span class="font-mono font-extrabold text-amber-700">11.100.000đ</span>
+                </div>
+                <div class="divide-y divide-slate-100">
+                  <div class="px-4 py-2.5 flex justify-between gap-3">
+                    <div><p class="font-bold text-slate-900">Máy chủ trung tâm Dell PC ×1</p><p class="text-slate-500">Vận hành máy chủ cục bộ 24/7 Offline-First</p></div>
+                    <span class="font-mono font-bold text-slate-900 shrink-0">8.000.000đ</span>
+                  </div>
+                  <div class="px-4 py-2.5 flex justify-between gap-3">
+                    <div><p class="font-bold text-slate-900">Phí bản quyền nâng cấp SmartHotel ×1</p><p class="text-slate-500">Mở khóa tự động hóa phòng &amp; tiết kiệm điện</p></div>
+                    <span class="font-mono font-bold text-slate-900 shrink-0">2.000.000đ</span>
+                  </div>
+                  <div class="px-4 py-2.5 flex justify-between gap-3">
+                    <div><p class="font-bold text-slate-900">Bộ phát WiFi chuyên dụng Ruijie ×1</p><p class="text-slate-500">Mạng LAN/WiFi ổn định cho thiết bị IoT</p></div>
+                    <span class="font-mono font-bold text-slate-900 shrink-0">1.100.000đ</span>
+                  </div>
+                </div>
+              </div>
+              <div class="m-3.5 p-3 rounded-xl bg-amber-50 border border-amber-200 text-[11px] text-amber-950 leading-relaxed">
+                <strong>Lưu ý mở rộng thực địa:</strong> Báo giá trên áp dụng cho 01 bộ phát WiFi Ruijie trung tâm. Cơ sở nhiều tầng cần bổ sung điểm phát WiFi hoặc lắp thêm Camera Dahua AI giám sát sảnh/quầy sẽ tính theo số lượng thiết bị phát sinh thực tế.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -708,6 +868,66 @@
         if (el) el.className = m.btn === item.btn ? activeCls : idleCls;
       });
       video.load();
+    }
+
+    const SMART_FIXED_COST = 11100000;
+    const SMART_PER_ROOM = 5950000;
+    const vndFmt = new Intl.NumberFormat("vi-VN");
+    let currentSmartRooms = 10;
+
+    function formatVndExact(n) {
+      return vndFmt.format(Math.round(n)) + "đ";
+    }
+
+    function setSmartRooms(val) {
+      const rooms = Math.max(1, Math.min(30, parseInt(val, 10) || 1));
+      currentSmartRooms = rooms;
+      const roomsCost = SMART_PER_ROOM * rooms;
+      const total = SMART_FIXED_COST + roomsCost;
+      const avg = Math.round(total / rooms);
+
+      const slider = document.getElementById("smart-room-slider");
+      if (slider) slider.value = String(rooms);
+      const setText = (id, txt) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = txt;
+      };
+      setText("smart-room-label", rooms + " phòng");
+      setText("smart-total-title", "Tổng dự toán trọn gói (" + rooms + " phòng)");
+      setText("smart-total-price", formatVndExact(total));
+      setText("smart-avg-price", formatVndExact(avg) + " / phòng");
+      setText("smart-rooms-formula", "Thiết bị & thi công (" + rooms + " × 5.950.000đ)");
+      setText("smart-rooms-cost", formatVndExact(roomsCost));
+
+      document.querySelectorAll(".smart-preset").forEach((btn) => {
+        const p = parseInt(btn.getAttribute("data-preset"), 10);
+        const sub = btn.querySelector("p:last-child");
+        const title = btn.querySelector("p:first-child");
+        if (p === rooms) {
+          btn.className = "smart-preset p-2.5 rounded-xl border text-left transition-all bg-brand-600 border-brand-600 text-white shadow-xs";
+          if (title) title.className = "text-xs font-extrabold text-white";
+          if (sub) sub.className = "text-[11px] font-mono font-bold text-emerald-100 mt-0.5";
+        } else {
+          btn.className = "smart-preset p-2.5 rounded-xl border text-left transition-all bg-slate-50 border-slate-200 hover:border-brand-600";
+          if (title) title.className = "text-xs font-extrabold text-slate-900";
+          if (sub) sub.className = "text-[11px] font-mono font-bold text-slate-500 mt-0.5";
+        }
+      });
+    }
+
+    async function consultSmartHotelZalo() {
+      const total = SMART_FIXED_COST + SMART_PER_ROOM * currentSmartRooms;
+      const avg = Math.round(total / currentSmartRooms);
+      const msg = `Chào kỹ sư Chu Trung (PMVN), tôi cần tư vấn & khảo sát gói SmartHotel quy mô ${currentSmartRooms} phòng — Dự toán trọn gói: ${formatVndExact(total)} (Bình quân ${formatVndExact(avg)}/phòng).`;
+      try {
+        await navigator.clipboard.writeText(msg);
+        const el = document.getElementById("smart-copy-msg");
+        if (el) {
+          el.textContent = "✓ Đã sao chép sẵn cấu hình " + currentSmartRooms + " phòng để dán vào Zalo!";
+          el.classList.remove("hidden");
+        }
+      } catch {}
+      window.open("https://zalo.me/0941204125", "_blank", "noopener,noreferrer");
     }
 
     function selectPlan(plan) {

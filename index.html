@@ -271,20 +271,24 @@
 
       <div class="flex flex-wrap items-center justify-center gap-2 mb-5">
         <button id="btn-vid-iot" type="button" onclick="switchVideo('iot')"
-          class="px-3.5 py-2 rounded-lg text-xs font-bold bg-brand-600 text-white shadow-xs transition-colors">
-          ⚡ Check-in, Ngắt Điện &amp; Khách Trở Về (-30% • 1p08s)
+          class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold bg-brand-600 text-white shadow-xs transition-colors">
+          <i data-lucide="zap" class="w-3.5 h-3.5 shrink-0"></i>
+          <span>Check-in, Ngắt Điện &amp; Khách Trở Về (-30% • 1p08s)</span>
         </button>
         <button id="btn-vid-showcase" type="button" onclick="switchVideo('showcase')"
-          class="px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
-          🎬 Tổng quan 3D CCCD &amp; Camera (1p30s)
+          class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
+          <i data-lucide="film" class="w-3.5 h-3.5 shrink-0"></i>
+          <span>Tổng quan 3D CCCD &amp; Camera (1p30s)</span>
         </button>
         <button id="btn-vid-basic" type="button" onclick="switchVideo('basic')"
-          class="px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
-          ▶ Hướng dẫn cơ bản (1p30s)
+          class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
+          <i data-lucide="play-circle" class="w-3.5 h-3.5 shrink-0"></i>
+          <span>Hướng dẫn cơ bản (1p30s)</span>
         </button>
         <button id="btn-vid-qr" type="button" onclick="switchVideo('qr')"
-          class="px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
-          📱 QR gọi món 3D (26s)
+          class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
+          <i data-lucide="qr-code" class="w-3.5 h-3.5 shrink-0"></i>
+          <span>QR gọi món 3D (26s)</span>
         </button>
       </div>
 
@@ -484,7 +488,7 @@
             <span class="inline-block text-[11px] font-bold text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded">Bước 1 •
               Tại phòng khách</span>
             <h3 class="text-base sm:text-lg font-bold text-slate-900">Quét QR gọi món 6 ngôn ngữ — Không cần tải App</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">Mỗi phòng có 1 tem QR đặt trên bàn. Hỗ trợ <strong>6 ngôn ngữ quốc tế</strong> (🇻🇳 Việt • 🇬🇧 Anh • 🇰🇷 Hàn • 🇨🇳 Trung • 🇫🇷 Pháp • 🇯🇵 Nhật) tự nhận diện theo điện thoại khách, giúp khách nước ngoài gọi món &amp; phục vụ cực dễ dàng.</p>
+            <p class="text-sm text-slate-600 leading-relaxed">Mỗi phòng có 1 tem QR đặt trên bàn. Hỗ trợ <strong>6 ngôn ngữ quốc tế</strong> (Việt • Anh • Hàn • Trung • Pháp • Nhật) tự nhận diện theo điện thoại khách, giúp khách nước ngoài gọi món &amp; phục vụ cực dễ dàng.</p>
           </div>
         </div>
 
@@ -905,8 +909,8 @@
     function switchVideo(which) {
       const video = document.getElementById("demo-video");
       const source = document.getElementById("demo-source");
-      const activeCls = "px-3.5 py-2 rounded-lg text-xs font-bold bg-brand-600 text-white shadow-xs transition-colors";
-      const idleCls = "px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors";
+      const activeCls = "inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold bg-brand-600 text-white shadow-xs transition-colors";
+      const idleCls = "inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors";
       const map = {
         iot: { src: "/assets/PMVN-SmartHotel-IoT-CheckIn-Energy-Demo.mp4", poster: "/assets/iot-demo-poster.jpg", btn: "btn-vid-iot" },
         showcase: { src: "/assets/PMVN-SmartHotel-3D-Showcase-90s.mp4", poster: "/assets/qr-cashier-3d.jpg", btn: "btn-vid-showcase" },

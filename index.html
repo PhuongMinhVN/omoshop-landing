@@ -4,9 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Phương Minh PMS — Phần Mềm Quản Lý Khách Sạn &amp; Homestay</title>
+  <title>Phương Minh SmartHotel — Phần Mềm Quản Lý Khách Sạn &amp; Tiết Kiệm 30% Điện</title>
   <meta name="description"
-    content="Phần mềm quản lý khách sạn chạy mạng nội bộ: Quét CCCD 3 giây, Mã QR gọi món từng phòng, Camera 4MP đối soát thu ngân, In hóa đơn K80. Miễn phí bản Portable Windows." />
+    content="Phần mềm quản lý khách sạn chạy nội bộ Offline-First: Check-in tự bật điều hòa 25°C, Khách ra ngoài tự ngắt tải tiết kiệm 30% điện, Quét CCCD 3 giây, QR gọi món 6 ngôn ngữ. Miễn phí bản Free Core 0đ." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://omoshop.live/" />
+  <meta property="og:title" content="Phương Minh SmartHotel — Tự Động Tiết Kiệm 30% Tiền Điện &amp; Quản Lý Khách Sạn 1 Chạm" />
+  <meta property="og:description" content="Check-in tự bật điều hòa 25°C, Khách ra ngoài tự tắt điện/điều hòa/bình nóng lạnh — vẫn giữ tủ lạnh 85W. Tải miễn phí bản phần mềm Free Core 0đ ngay hôm nay!" />
+  <meta property="og:image" content="https://omoshop.live/assets/iot-demo-poster.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="/assets/pmvn-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -247,36 +253,68 @@
     </div>
   </section>
 
-  <!-- 3. VIDEO DEMO -->
-  <section id="video-demo" class="py-12 sm:py-16 bg-white">
+  <!-- 3. VIDEO DEMO NỔI BẬT CHUẨN CHẠY QUẢNG CÁO -->
+  <section id="video-demo" class="py-12 sm:py-16 bg-gradient-to-b from-white via-emerald-50/40 to-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-8 space-y-2">
-        <p class="text-xs font-bold uppercase tracking-wider text-brand-600">Video thực tế</p>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Xem quy trình vận hành trong 90 giây</h2>
-        <p class="text-sm text-slate-600">Từ lúc khách bước vào sảnh, quét CCCD, chụp ảnh đối soát đến gọi món QR và in
-          hóa đơn.</p>
+      <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-8 space-y-2.5">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-[11px] font-extrabold uppercase tracking-wider">
+          <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-600"></i>
+          Video Trải Nghiệm Thực Tế • Tiết Kiệm 30% Tiền Điện
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
+          Xem Khách Check-in &amp; Phòng Tự Ngắt Điện Trong 57 Giây
+        </h2>
+        <p class="text-sm text-slate-600">
+          Khách nhận phòng tự bật điều hòa 25°C &amp; đèn chào mừng — Khách ra ngoài chạm 1 nút tự tắt điều hòa, đèn, bình nóng lạnh nhưng <strong>vẫn giữ điện tủ lạnh</strong>.
+        </p>
       </div>
 
       <div class="flex flex-wrap items-center justify-center gap-2 mb-5">
-        <button id="btn-vid-showcase" type="button" onclick="switchVideo('showcase')"
+        <button id="btn-vid-iot" type="button" onclick="switchVideo('iot')"
           class="px-3.5 py-2 rounded-lg text-xs font-bold bg-brand-600 text-white shadow-xs transition-colors">
-          Video 3D tổng quan (1p30s • Có thuyết minh)
+          ⚡ Check-in &amp; Tự Ngắt Điện (-30% • 57s)
+        </button>
+        <button id="btn-vid-showcase" type="button" onclick="switchVideo('showcase')"
+          class="px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
+          🎬 Tổng quan 3D CCCD &amp; Camera (1p30s)
         </button>
         <button id="btn-vid-basic" type="button" onclick="switchVideo('basic')"
           class="px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
-          Hướng dẫn cơ bản (1p30s)
+          ▶ Hướng dẫn cơ bản (1p30s)
         </button>
         <button id="btn-vid-qr" type="button" onclick="switchVideo('qr')"
           class="px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
-          QR gọi món 3D (26s)
+          📱 QR gọi món 3D (26s)
         </button>
       </div>
 
-      <div class="rounded-2xl overflow-hidden border border-slate-200 bg-black shadow-md">
-        <video id="demo-video" controls playsinline preload="metadata" poster="/assets/qr-cashier-3d.jpg"
+      <div class="rounded-2xl overflow-hidden border-2 border-brand-600/25 bg-black shadow-xl shadow-slate-200/80">
+        <video id="demo-video" controls playsinline preload="metadata" poster="/assets/iot-demo-poster.jpg"
           class="w-full aspect-video bg-black">
-          <source id="demo-source" src="/assets/PMVN-SmartHotel-3D-Showcase-90s.mp4" type="video/mp4" />
+          <source id="demo-source" src="/assets/PMVN-SmartHotel-IoT-CheckIn-Energy-Demo.mp4" type="video/mp4" />
         </video>
+      </div>
+
+      <!-- Thanh điểm nhấn & CTA chuyển đổi ngay dưới Video (tối ưu chạy Ads) -->
+      <div class="mt-4 rounded-2xl bg-white border border-slate-200 p-4 sm:p-5 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-2 text-xs font-bold">
+          <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200/70">✓ Check-in bật ĐH 25°C</span>
+          <span class="px-2.5 py-1 rounded-lg bg-amber-50 text-amber-800 border border-amber-200/70">✓ Ra ngoài ngắt tải -30%</span>
+          <span class="px-2.5 py-1 rounded-lg bg-sky-50 text-sky-800 border border-sky-200/70">✓ Giữ điện tủ lạnh 85W</span>
+        </div>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 shrink-0">
+          <a href="https://github.com/PhuongMinhVN/omoshop-landing/raw/downloads/PMVN-PMS-Portable.zip"
+            download="PMVN-PMS-Portable.zip"
+            class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-extrabold flex items-center justify-center gap-1.5 transition-colors">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i>
+            <span>Tải Phần Mềm Miễn Phí (0đ)</span>
+          </a>
+          <a href="#smart-calculator"
+            class="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-extrabold flex items-center justify-center gap-1.5 transition-colors">
+            <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+            <span>Tính Báo Giá Phòng</span>
+          </a>
+        </div>
       </div>
 
       <!-- Bảng phím tắt POS hướng dẫn nhanh cho thu ngân -->
@@ -413,8 +451,8 @@
           <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center"><i
               data-lucide="zap" class="w-5 h-5"></i></div>
           <h3 class="text-base font-bold text-slate-900">Tự động đóng / ngắt điện phòng</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Kết nối Home Assistant tự bật điều hòa đón khách lúc nhận
-            phòng, ngắt tải khi khách ra ngoài và tắt toàn bộ thiết bị khi trả phòng.</p>
+          <p class="text-sm text-slate-600 leading-relaxed">Hệ thống điện thông minh tích hợp theo phần mềm tự bật điều hòa đón khách lúc nhận
+            phòng, ngắt tải nặng khi khách ra ngoài (vẫn giữ tủ lạnh) và tắt toàn bộ thiết bị khi trả phòng.</p>
         </div>
 
         <div class="bg-white rounded-2xl p-5 border border-slate-200/90 space-y-3">
@@ -559,7 +597,7 @@
             <ul class="space-y-2.5 pt-3 border-t border-slate-100 text-sm text-slate-700">
               <li>✓ Toàn bộ tính năng Gói Pro AI (không giới hạn phòng)</li>
               <li>✓ Tích hợp Camera AI Dahua 4MP từng phòng</li>
-              <li>✓ Home Assistant tự ngắt điều hòa tiết kiệm 30% điện</li>
+              <li>✓ Hệ thống điện thông minh tích hợp tự ngắt điều hòa tiết kiệm 30% điện</li>
               <li>✓ Website đặt phòng riêng đồng bộ về quầy lễ tân</li>
               <li>✓ Hỗ trợ Marketing quảng bá &amp; thu hút khách đặt phòng</li>
               <li>✓ Tùy chỉnh thương hiệu, mẫu hóa đơn theo yêu cầu</li>
@@ -847,6 +885,20 @@
     </div>
   </footer>
 
+  <!-- FLOATING AD CONVERSION BAR (ZALO + HOTLINE) -->
+  <div class="fixed bottom-4 right-4 z-40 flex flex-col gap-2">
+    <a href="https://zalo.me/0941204125" target="_blank" rel="noopener noreferrer"
+      class="px-3.5 py-2.5 rounded-full bg-sky-600 hover:bg-sky-700 text-white text-xs font-extrabold shadow-lg flex items-center gap-1.5 transition-all active:scale-95">
+      <i data-lucide="message-circle" class="w-4 h-4"></i>
+      <span>Chat Zalo Tư Vấn</span>
+    </a>
+    <a href="tel:0941204125"
+      class="px-3.5 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-xs font-extrabold shadow-lg flex items-center gap-1.5 transition-all active:scale-95">
+      <i data-lucide="phone" class="w-4 h-4"></i>
+      <span>0941 204 125</span>
+    </a>
+  </div>
+
   <script>
     if (window.lucide) lucide.createIcons();
 
@@ -856,11 +908,12 @@
       const activeCls = "px-3.5 py-2 rounded-lg text-xs font-bold bg-brand-600 text-white shadow-xs transition-colors";
       const idleCls = "px-3.5 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors";
       const map = {
+        iot: { src: "/assets/PMVN-SmartHotel-IoT-CheckIn-Energy-Demo.mp4", poster: "/assets/iot-demo-poster.jpg", btn: "btn-vid-iot" },
         showcase: { src: "/assets/PMVN-SmartHotel-3D-Showcase-90s.mp4", poster: "/assets/qr-cashier-3d.jpg", btn: "btn-vid-showcase" },
         basic: { src: "/assets/Huong-Dan-Su-Dung-Co-Ban-PMVN-PMS.mp4", poster: "/assets/qr-cashier-3d.jpg", btn: "btn-vid-basic" },
         qr: { src: "/assets/Huong-Dan-QR-Phong-PMVN-3D.mp4", poster: "/assets/qr-guest-3d.jpg", btn: "btn-vid-qr" },
       };
-      const item = map[which] || map.showcase;
+      const item = map[which] || map.iot;
       source.src = item.src;
       video.poster = item.poster;
       Object.values(map).forEach((m) => {
